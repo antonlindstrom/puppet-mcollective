@@ -1,0 +1,28 @@
+# main config
+libdir = <%= libdir %>
+logfile = <%= logfile %>
+daemonize = <%= mc_daemonize %>
+keeplogs = <%= keeplogs %>
+max_log_size = <%= max_log_size %>
+loglevel = <%= loglevel %>
+identity = <%= identity %>
+registerinterval = <%= registerinterval %>
+
+# connector plugin config
+connector = <%= connector %>
+plugin.stomp.host = <%= stomp_server %>
+plugin.stomp.port = <%= stomp_port %>
+plugin.stomp.user = <%= stomp_user %>
+plugin.stomp.password = <%= stomp_password %>
+
+# facts
+factsource = <%= factsource %>
+<% if factsource == 'yaml' -%>
+plugin.yaml = <%= factfile %>
+<% end -%>
+
+# security plugin config
+securityprovider = <%= securityprovider %>
+<% if securityprovider == 'psk' -%>
+plugin.psk = <%= psk %>
+<% end -%>
