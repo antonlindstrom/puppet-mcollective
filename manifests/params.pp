@@ -27,7 +27,7 @@ class mcollective::params {
 
   $libdir = $::osfamily ? {
     redhat  => '/usr/libexec/mcollective',
-    debian  => '',
+    debian  => '/usr/share/mcollective/plugins',
     default => fail("OSfamily ${::osfamily} not supported")
   }
   
